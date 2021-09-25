@@ -1,23 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.css";
+import { getSnakeAPI } from "./snakeAPI";
 
 function App() {
+  const load = async () => {
+    const snakeAPI = await getSnakeAPI();
+    console.log(snakeAPI.exports.add(2, 3));
+  };
+  useEffect(() => {
+    load();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Dummy
       </header>
     </div>
   );
