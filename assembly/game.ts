@@ -2,6 +2,7 @@ import { Snake } from "./snake";
 import { Cell } from "./cell";
 import { DIRECTION } from "./direction";
 import { MAX_X, MAX_Y } from "./constants";
+import { consoleLog } from "./env";
 
 export class Game {
   snake: Snake = new Snake();
@@ -20,6 +21,7 @@ export class Game {
     if (snakeHead.isSame(this.food)) {
       this.snake.grow();
       this.generateFood();
+      consoleLog('You ate an apple!');
     } else {
       this.snake.move();
     }

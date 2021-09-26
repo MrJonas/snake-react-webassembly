@@ -1,8 +1,7 @@
 /* eslint-disable eqeqeq */
 import { DIRECTION, isOpposite } from "./direction";
 import { Game } from "./game";
-
-declare function consoleLog(mesage: string): void;
+import { consoleLog } from "./env";
 
 const game = new Game();
 
@@ -16,6 +15,6 @@ export function setDirection(direction: DIRECTION): bool {
     game.setDirection(direction);
     return true;
   }
-  consoleLog("This direction is opposite!");
+  consoleLog("Can't go to opposite direction!");
   return false;
 }

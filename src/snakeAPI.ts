@@ -7,7 +7,7 @@ interface API {
 
 export const getSnakeAPI = async (consoleLog: (m: string) => void) => {
   const imports = {
-    index: {
+    env: {
       consoleLog,
     },
   };

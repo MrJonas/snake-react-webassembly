@@ -1,0 +1,1 @@
+export declare function consoleLog(mesage: string): void;

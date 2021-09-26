@@ -22,10 +22,20 @@ const DIRECTION_MAP = {
 
 function App() {
   const snakeAPI = useRef<any>();
+  const messageTimeout = useRef<any>();
   const [snake, setSnake] = useState([])
   const [food, setFood] = useState([])
+  const [message, setMessage] = useState('')
+  const [showMessage, setShowMessage] = useState(false)
   const handleConsoleLog = (m:string) => {
-    console.log(snakeAPI.current?.exports.__getString(m))
+    const message = snakeAPI.current?.exports.__getString(m)
+    console.log(message)
+    setMessage(message)
+    setShowMessage(true)
+    clearTimeout(messageTimeout.current)
+    messageTimeout.current = setTimeout(() => {
+      setShowMessage(false)
+    }, 1000)
   }
   const load = async () => {
     snakeAPI.current = await getSnakeAPI(handleConsoleLog);
@@ -64,10 +74,16 @@ function App() {
 
   const numberOfApples = ((snake.length || 4) / 2) - 2
 
+  const messageStyle = {
+    opacity: showMessage ? 1 : 0,
+    transition: showMessage ? '' : "all 1s ease-in"
+  }
+
   return (
     <div className="App">
       <header className="App-header">&#127822; {numberOfApples}</header>
       <Canvas food={food} snake={snake}/>
+      <div style={messageStyle}>{message}</div>
     </div>
   );
 }
