@@ -1,3 +1,14 @@
+body {
+  background-color: rgb(0, 43, 0);
+}
+
 .App {
   text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.App-header {
+  padding: 20px;
 }
