@@ -1,5 +1,5 @@
 /* eslint-disable eqeqeq */
-import { DIRECTION , isOpposite } from "./direction";
+import { DIRECTION, isOpposite } from "./direction";
 import { Game } from "./game";
 
 declare function consoleLog(mesage: string): void;
@@ -13,9 +13,9 @@ export function getPosition(): i32[][] {
 
 export function setDirection(direction: DIRECTION): bool {
   if (!isOpposite(direction, game.snake.direction)) {
-    game.setDirection(direction)
-    return true
+    game.setDirection(direction);
+    return true;
   }
-  consoleLog('This direction is opposite!')
-  return false
-} 
+  consoleLog("This direction is opposite!");
+  return false;
+}
