@@ -1,1 +1,1 @@
-export declare function sendMessage(mesage: string): void;
+export declare function sendMessage(mesage: string): void

@@ -1,20 +1,20 @@
 {
-  "targets": {
-    "debug": {
-      "binaryFile": "public/snake-api/untouched.wasm",
-      "textFile": "public/snake-api/untouched.wat",
-      "sourceMap": true,
-      "debug": true
+    "targets": {
+        "debug": {
+            "binaryFile": "public/snake-api/untouched.wasm",
+            "textFile": "public/snake-api/untouched.wat",
+            "sourceMap": true,
+            "debug": true
+        },
+        "release": {
+            "binaryFile": "public/snake-api/optimized.wasm",
+            "textFile": "public/snake-api/optimized.wat",
+            "sourceMap": true,
+            "optimizeLevel": 3,
+            "shrinkLevel": 0,
+            "converge": false,
+            "noAssert": false
+        }
     },
-    "release": {
-      "binaryFile": "public/snake-api/optimized.wasm",
-      "textFile": "public/snake-api/optimized.wat",
-      "sourceMap": true,
-      "optimizeLevel": 3,
-      "shrinkLevel": 0,
-      "converge": false,
-      "noAssert": false
-    }
-  },
-  "options": {}
+    "options": {}
 }

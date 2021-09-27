@@ -1,2 +1,2 @@
-export * from "./useDirectionKeydown";
-export * from "./useSnakeApiData"
+export * from './useDirectionKeydown'
+export * from './useSnakeApiData'
