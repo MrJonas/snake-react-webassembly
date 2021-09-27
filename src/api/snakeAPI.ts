@@ -5,10 +5,10 @@ interface API {
   setDirection(direction: number): boolean
 }
 
-export const getSnakeAPI = async (consoleLog: (m: string) => void) => {
+export const getSnakeAPI = async (sendMessage: (m: string) => void) => {
   const imports = {
     env: {
-      consoleLog,
+      sendMessage,
     },
   };
   // @ts-ignore

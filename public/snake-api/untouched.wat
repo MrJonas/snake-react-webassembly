@@ -15,7 +15,7 @@
  (type $i32_i32_i32_i32_=>_i32 (func (param i32 i32 i32 i32) (result i32)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
  (import "env" "seed" (func $~lib/builtins/seed (result f64)))
- (import "env" "consoleLog" (func $assembly/env/consoleLog (param i32)))
+ (import "env" "sendMessage" (func $assembly/env/sendMessage (param i32)))
  (global $assembly/direction/DIRECTION.UP i32 (i32.const 1))
  (global $assembly/direction/DIRECTION.DOWN i32 (i32.const 2))
  (global $assembly/direction/DIRECTION.RIGHT i32 (i32.const 3))
@@ -5026,7 +5026,7 @@
    local.get $2
    i32.store offset=4
    local.get $2
-   call $assembly/env/consoleLog
+   call $assembly/env/sendMessage
   else
    local.get $0
    i32.load
@@ -5104,7 +5104,7 @@
    local.get $2
    i32.store
    local.get $2
-   call $assembly/env/consoleLog
+   call $assembly/env/sendMessage
   else
    local.get $0
    i32.load
@@ -5339,7 +5339,7 @@
   local.get $1
   i32.store
   local.get $1
-  call $assembly/env/consoleLog
+  call $assembly/env/sendMessage
   i32.const 0
   local.set $1
   global.get $~lib/memory/__stack_pointer

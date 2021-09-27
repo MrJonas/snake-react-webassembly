@@ -11,7 +11,7 @@
  (type $i32_i32_i32_=>_i32 (func (param i32 i32 i32) (result i32)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
  (import "env" "seed" (func $~lib/builtins/seed (result f64)))
- (import "env" "consoleLog" (func $assembly/env/consoleLog (param i32)))
+ (import "env" "sendMessage" (func $assembly/env/sendMessage (param i32)))
  (global $~lib/rt/itcms/total (mut i32) (i32.const 0))
  (global $~lib/rt/itcms/threshold (mut i32) (i32.const 0))
  (global $~lib/rt/itcms/state (mut i32) (i32.const 0))
@@ -3843,7 +3843,7 @@
     i32.const 1744
     i32.store
     i32.const 1744
-    call $assembly/env/consoleLog
+    call $assembly/env/sendMessage
    else
     global.get $~lib/memory/__stack_pointer
     local.tee $1
@@ -3878,7 +3878,7 @@
      i32.const 1808
      i32.store offset=4
      i32.const 1808
-     call $assembly/env/consoleLog
+     call $assembly/env/sendMessage
     else
      global.get $~lib/memory/__stack_pointer
      local.get $0
@@ -4172,7 +4172,7 @@
   i32.const 1952
   i32.store
   i32.const 1952
-  call $assembly/env/consoleLog
+  call $assembly/env/sendMessage
   global.get $~lib/memory/__stack_pointer
   i32.const 4
   i32.add

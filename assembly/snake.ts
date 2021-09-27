@@ -1,7 +1,7 @@
 /* eslint-disable eqeqeq */
 import { DIRECTION } from './direction'
 import { Cell } from './cell'
-import { consoleLog } from "./env";
+import { sendMessage } from "./env";
 
 const MAX_Y = 25;
 const MAX_X = 25;
@@ -41,7 +41,7 @@ export class Snake {
     const newHead = this.getNextHead()
     if (this.isOverlaping(newHead)) {
       this.reset()
-      consoleLog('Your snake is dead!')
+      sendMessage('Your snake is dead!')
     } else {
       this.body.unshift(newHead)
       this.body.pop()

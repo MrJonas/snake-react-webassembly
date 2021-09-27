@@ -27,7 +27,7 @@ To accees values in the array assembly script loader method is used `__getArray(
     - `4 - LEFT`
 
 
-- AssemblyScript snake API api expects `consoleLog(m: string)` method passed as callback. To accees string value assembly script loader method is used `__getString(messageId)`.
+- AssemblyScript snake API api expects `sendMessage(m: string)` method passed as callback. To accees string value assembly script loader method is used `__getString(messageId)`.
 
 
 ### Starting game locally

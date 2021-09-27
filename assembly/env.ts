@@ -1,1 +1,1 @@
-export declare function consoleLog(mesage: string): void;
+export declare function sendMessage(mesage: string): void;
